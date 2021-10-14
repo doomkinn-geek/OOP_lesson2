@@ -14,27 +14,37 @@ namespace task2
     }
     class BankAccount
     {
-        public long AccountNumber
+        public long GetAccountNumber()
         {
-            get => _accountNumber;
-            set { _accountNumber = value; }
+            return _accountNumber;
         }
-        public decimal Balance
+        public void SetAccountNumber(long number)
         {
-            get => _balance;
-            set { _balance = value; }
+            _accountNumber = number;
         }
-        public AccountType Type
+        public decimal GetBalance()
         {
-            get => _type;
-            set { _type = value; }
+            return _balance;
+        }
+        public void SetBalance(decimal value)
+        {
+            _balance = value;
+        }
+        public AccountType GetAccountType()
+        {
+            return _type;
+        }
+
+        public void SetType(AccountType type)
+        {
+            _type = type;
         }
         private long _accountNumber;
         private decimal _balance;
         private AccountType _type;
 
         private static long _baseAccountNumber = 11111111111111;
-        public override string ToString() => $"Номер счета - {AccountNumber}, Баланс - {Balance}, Тип счета - {Type}";
+        public override string ToString() => $"Номер счета - {GetAccountNumber()}, Баланс - {GetBalance()}, Тип счета - {GetAccountType()}";
         private long GenerateAccountNumber()
         {
             return _baseAccountNumber++;
@@ -42,8 +52,8 @@ namespace task2
 
         public BankAccount()
         {
-            AccountNumber = GenerateAccountNumber();
-            Balance = 0;
+            SetAccountNumber(GenerateAccountNumber());
+            SetBalance(0);
         }        
     }
 }

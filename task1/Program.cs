@@ -7,9 +7,9 @@ namespace task1
         static void Main(string[] args)
         {
             BankAccount account = new BankAccount();
-            account.AccountNumber = 2334455667788112233;
-            account.Balance = 50000;
-            account.Type = AccountType.Credit;
+            account.SetAccountNumber(2334455667788112233);
+            account.SetBalance(50000);
+            account.SetType(AccountType.Credit);
             Console.WriteLine(account);
         }
     }
