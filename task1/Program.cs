@@ -6,7 +6,11 @@ namespace task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BankAccount account = new BankAccount();
+            account.AccountNumber = 2334455667788112233;
+            account.Balance = 50000;
+            account.Type = AccountType.Credit;
+            Console.WriteLine(account);
         }
     }
 }
